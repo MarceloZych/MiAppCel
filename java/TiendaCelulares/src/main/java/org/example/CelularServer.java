@@ -59,7 +59,7 @@ public class CelularServer {
 
             String response = "";
 
-            // Manejamos el método GET
+            // Manejamos el metodo GET
             if ("GET".equals(exchange.getRequestMethod())) {
                 try {
                     //LLAMADA AL SERVICIO: Delegamos la responsabilidad
@@ -84,12 +84,12 @@ public class CelularServer {
                 }
 
             } else {
-                // Si no es GET, respondemos que el método no está permitido (405)
+                // Si no es GET, respondemos que el metodo no está permitido (405)
                 exchange.sendResponseHeaders(405, -1);
             }
         }
 
-        // MÉTODO DE UTILIDAD: Para mantener el estándar JSON que veníamos usando
+        // METODO de utilidad para mantener el standar JSON que veniamos utilizando
         private String convertirListaAJson(List<Producto> productos) {
             StringBuilder json = new StringBuilder("[");
             for (int i = 0; i < productos.size(); i++) {
