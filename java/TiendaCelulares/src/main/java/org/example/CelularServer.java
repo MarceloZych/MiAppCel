@@ -26,8 +26,7 @@ public class CelularServer {
         String user = "postgres";
         String password = "marce"; // Tu contraseña actualizada
 
-        // 2. INYECCIÓN DE DEPENDENCIAS MANUAL
-        // Creamos la capa de datos
+        // 2. INYECCIÓN DE DEPENDENCIAS MANUAL. y Creamos la capa de datos
         ProductoRepository repository = new ProductoRepository(url, user, password);
 
         // Creamos la capa de negocio inyectando el repositorio
