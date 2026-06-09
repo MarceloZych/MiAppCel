@@ -1,15 +1,15 @@
 package org.example.models;
 
-public class Celulares {
+public class Producto {
     private int id;
     private String marca;
     private String modelo;
     private Double precio;
 
-    public Celulares() {
+    public Producto() {
     }
 
-    public Celulares(int id, String marca, String modelo, Double precio) {
+    public Producto(int id, String marca, String modelo, Double precio) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
