@@ -18,4 +18,11 @@ public class ProductoService {
         // Aquí podrías agregar lógica: ej. filtrar productos sin stock
         return repository.findAll();
     }
+
+    public void desactivarProducto(int id) throws Exception {
+        if (id<=0) {
+            throw new Exception("ID no válido  para desactivar");
+        }
+        repository.softDelete(id);
+    }
 }

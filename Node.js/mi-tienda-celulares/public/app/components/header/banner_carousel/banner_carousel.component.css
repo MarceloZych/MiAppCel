@@ -1,0 +1,70 @@
+@import url('../../../../css/style.css');
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 100vw;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: rgb(56, 112, 187);
+    background: linear-gradient(180deg,rgb(47, 80, 172) 0%, rgba(255, 255, 255, 1) 50%);
+}
+
+/* El truco de magia: Scroll Snap */
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    margin: 2vh 15vw;
+    scroll-snap-type: x mandatory; /* Fuerza a que la imagen se acomode sola al centro */
+    scroll-behavior: smooth; /* Animación suave nativa */
+    -ms-overflow-style: none; /* Oculta la barra de scroll en IE */
+    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+}
+
+/* Oculta la barra de scroll en Chrome/Safari */
+.carousel-track::-webkit-scrollbar {
+    display: none; 
+}
+
+.carousel-slide {
+    flex: 0 0 100%; /* Cada imagen ocupa el 100% del contenedor */
+    scroll-snap-align: center; /* Se ajusta exactamente al centro */
+    position: relative;
+    z-index: 10;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 350px; /* Altura estándar de banners corporativos */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    display: block;
+    border-radius: 20px;
+}
+
+/* Estilos de los botones laterales flotantes */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00aae4; /* Azul Personal */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+    transition: background-color 0.2s;
+    margin: 0 10vw;
+}
+
+.carousel-btn:hover {
+    background-color: #ffffff;
+}
+
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }

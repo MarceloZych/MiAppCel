@@ -1,0 +1,87 @@
+@import url('../../../../css/style.css');
+
+* {
+    box-sizing: border-box;
+}
+
+.aem_wrapper_element {
+    width: 100%;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+.aem_wrapper_element *, 
+.aem_wrapper_element *::before, 
+.aem_wrapper_element *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.headerSegment {
+    background-color: #000;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.containerHeaderSegment {
+    width: 100%;
+    max-width: 1200px; /* Evita que en pantallas gigantes se pegue demasiado a los bordes */
+    margin: 0 auto;
+    padding: 0 40px; /* Alineación horizontal coincidente con tu logo inferior */
+}
+
+.segments {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 36px; /* Coincide con el padre para calcular el borde inferior */
+}
+
+.segments > div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.itemSegment {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 4px; /* Pequeño aire horizontal para el texto */
+    cursor: pointer;
+    border-bottom: 3px solid transparent; /* Reserva el espacio para el efecto activo */
+    transition: all 0.2s ease;
+}
+
+.itemSegment:hover .title {
+    color: var(  --cc-color-text-item-secondary);
+}
+
+.itemSegment .title {
+    color: #fff; /* Gris suave característico del diseño original */
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    user-select: none;
+    line-height: 1;
+}
+
+.segmentSelected {
+    border-bottom: 3px solid var( --cc-color-icon); /* El azul Personal [cite: 14, 24, 28] */
+}
+
+.segmentSelected .title {
+    color: #fff; /* Texto blanco brillante cuando está seleccionado */
+    font-weight: 600;
+}
+
+/* 8. Los separadores de barra vertical "|" */
+.separator {
+    color: #262626; /* Gris muy oscuro, casi invisible como en la imagen real */
+    font-size: 12px;
+    margin: 0 12px;
+    user-select: none;
+}

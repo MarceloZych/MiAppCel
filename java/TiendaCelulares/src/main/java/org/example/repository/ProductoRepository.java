@@ -20,7 +20,10 @@ public class ProductoRepository {
 
     public List<Producto> findAll() throws SQLException {
         List<Producto> productos = new ArrayList<>();
-        String sql = "SELECT id_id, marca, modelo, precio, FROM productos";
+        String sql = "SELECT " +
+                "id_id, marca, modelo,color,almacenamiento_gb," +
+                "ram_gb, precio,stock,imagen_url, es_5g, activo " +
+                " FROM productos WHERE activo = TRUE";
 
         try (Connection conn = DriverManager.getConnection(url, user, pass);
              Statement stmt = conn.createStatement();
@@ -31,11 +34,27 @@ public class ProductoRepository {
                     rs.getInt("id_id"),
                     rs.getString("marca"),
                     rs.getString("modelo"),
-                    rs.getDouble("precio")
+                    rs.getString("color"),
+                    rs.getInt("almacenamiento_gb"),
+                    rs.getInt("ram_gb"),
+                    rs.getDouble("precio"),
+                    rs.getInt("stock"),
+                    rs.getString("imagen_url"),
+                    rs.getBoolean("es_5g"),
+                    rs.getBoolean("activo")
                 ));
                 }
             }
         return productos;
     }
-
+    public void softDelete(int id) throws SQLException {
+        String sql = "UPDATE productos SET activo = FALSE WHERE id_id = ?";
+        try (Connection conn = DriverManager.getConnection(url, user, pass);
+            PreparedStatement pstmt = conn.prepareStatement(sql))
+        // Usamos "PreparedStatement" para evitar injeccióm SQL, una de las mejores practicas
+        {
+            pstmt.setInt(1,id);
+            pstmt.executeUpdate();
+        }
+   }
 }

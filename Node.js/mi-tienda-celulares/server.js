@@ -4,7 +4,7 @@ const path = require('node:path');
 
 const PORT = 3000;
 const server = http.createServer((req, res) => {
-    let urlPath = req.url === '/' ? 'index.html' : req.url;
+    let urlPath = req.url === '/' ? 'main.html' : req.url;
     const filePath = path.join(__dirname, 'public', urlPath);
         
     const extname = path.extname(filePath);
@@ -18,7 +18,6 @@ const server = http.createServer((req, res) => {
         '.jpg': 'image/jpg'
     };
 
-    //let contentType = 'text/html';
     const contentType = mimeTypes[extname] || 'application/octet-stream';
                     
     fs.readFile(filePath, (err, content) => {

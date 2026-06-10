@@ -1,0 +1,59 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+:root {
+    --cc-color: #0076c7;
+    --cc-color-arrow-carousel: #0076c7;
+    --cc-color-background-headerBrand: #fff;
+    --cc-color-background-headerBrand-mobile: #fff;
+    --cc-color-color-headerBrand-border: #e3e1e6;
+    --cc-color-background: #fff;
+    --cc-color-text-geolocation-modal: #fff;
+    --cc-color-input-geolocation-modal-error: #fff;
+    --cc-color-input-text-geolocation-modal-error: #dd3730;
+    --cc-color-component-text: #052c50;
+    --cc-color-component-background: #e8f8ff;
+    --cc-color-border: #919094;
+    --cc-color-border-selected: #1eb2f5;
+    --cc-color-section-border: #e3e1e6;
+    --cc-color-text: #303033;
+    --cc-color-text-secondary: #77767a;
+    --cc-color-text-secondary-focus: #0076c7;
+    --cc-color-text-item: #5e5e62;
+    --cc-color-text-item-secondary: #77767a;
+    --cc-color-separator-lineal: #c8c6ca;
+    --cc-color-icon: #4ec5ff;
+    --cc-color-background-tooltip: #052c50;
+    --cc-color-text-tooltip: #fff;
+    --cc-color-background-menuHeader: #e8f8ff;
+    --cc-color-text-title-menuHeader: #77767a;
+    --cc-color-text-primary-menuHeader: #052c50;
+    --cc-color-text-secundary-menuHeader: #303033;
+    --cc-color-background-menu: #fff;
+    --cc-color-background-text: #052c50;
+    --cc-color-background-menuHamburger: #fff;
+    --cc-color-background-menuHamburger-submenu: #e8f8ff;
+    --cc-color-text-menuHamburger: #052c50;
+    --cc-color-text-menuHamburger-links-bottom: #015fb2;
+    --cc-color-text-menuHamburger-icon: #0076c7;
+    --cc-color-background-menuHamburger-pill: #94deff;
+    --cc-color-text-menuHamburger-pill: #052c50;
+    --cc-color-border-storeFront-button: #121212;
+    --cc-font-size-base: 14px;
+    --cc-font-weight-regular: 400;
+    --cc-font-family-base: $font-family-roboto-regular;
+    transition: background-color .3s ease, color .3s ease;
+}

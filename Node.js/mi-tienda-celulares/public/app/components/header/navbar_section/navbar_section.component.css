@@ -1,0 +1,160 @@
+/* 1. Contenedor principal de la barra blanca */
+.cc_header_brand {
+    background-color: #ffffff;
+    width: 100%;
+    /* La imagen muestra una línea gruesa inferior. Puedes cambiar el color al turquesa si prefieres */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+}
+
+/* 2. Distribución horizontal en 3 bloques (Izquierda, Centro, Derecha) */
+.cc_header_brand-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px; /* Misma alineación que la barra negra superior */
+    height: 72px; /* Altura estándar para respirar cómodamente */
+}
+
+/* --- SECCIÓN IZQUIERDA: Logo --- */
+.cc_header_brand-container__left {
+    display: flex;
+    align-items: center;
+    width: 200px; /* Fijamos un ancho para que el centro quede bien balanceado */
+}
+
+/* Ocultamos el menú hamburguesa en versión escritorio */
+.menu-hamburger-container {
+    display: none;
+}
+
+.cc_logo img {
+    height: 28px; /* Controlamos el tamaño del logo SVG */
+    display: block;
+}
+
+/* --- SECCIÓN CENTRAL: Menú de productos --- */
+.cc_header_brand-container__center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.cc_header_brand-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 28px; /* Espacio horizontal entre "Móvil", "Fibra", etc. */
+}
+
+.itemBrand a {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el ícono circular y el texto */
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+/* 1. Preparamos el contenedor del enlace para anclar la línea */
+.itemBrand a {
+    position: relative; /* Fundamental para que la línea se posicione respecto a este elemento */
+    padding-bottom: 6px; /* Le damos aire para que la línea no quede pegada al texto */
+}
+
+/* 2. Creamos la línea (oculta por defecto) */
+.itemBrand a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Grosor exacto de la imagen corporativa */
+    
+    /* ¡Acá está la magia! Llama al color dinámico del HTML */
+    background-color: var(--iconElement-border-color); 
+    border-radius: 4px; /* Bordes sutilmente redondeados */
+    
+    /* Estado inicial de la animación: invisible y colapsado */
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center; /* Hace que la línea se expanda desde el medio */
+    transition: all 0.3s ease-in-out;
+}
+
+/* 3. Efecto Hover: Mostramos y expandimos la línea */
+.itemBrand:hover a::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.itemBrand img {
+    width: 20px;
+    height: 20px;
+}
+
+.itemBrand p {
+    margin: 0; /* Reseteamos los márgenes del párrafo */
+}
+
+/* --- SECCIÓN DERECHA: Geolocalización, Carrito, Usuario --- */
+.cc_header_brand-container__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 250px; /* Balanceamos con el ancho del logo */
+    gap: 8px;
+}
+
+/* Limpieza de botones (quitar bordes y fondos por defecto del navegador) */
+.buttonGeolocationBrandContainer,
+.buttonUserBrandMenu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+}
+
+.buttonGeolocationBrandContainer:hover,
+.buttonUserBrandMenu:hover,
+.containerCart:hover svg {
+    opacity: 0.7;
+    background: #fff;
+} 
+
+/* Control del tamaño de los íconos de la derecha */
+.cc_header_brand-container__right svg {
+    height: 18px;
+    width: auto;
+    color: #333333; /* Color gris oscuro nativo */
+}
+
+.containerCart svg {
+    height: 20px;
+    transition: color 0.2s;
+}
+
+/* Separadores verticales (para que coincidan con la barra negra) */
+.cc_header_brand-container__right .separator {
+    color: #cccccc;
+    font-size: 14px;
+    user-select: none;
+}
+
+/* --- VERSIÓN MÓVIL OCULTA --- */
+/* Ocultamos el carrusel de íconos ya que es un diseño alternativo para celulares */
+.containerCarousel {
+    display: none;
+}
