@@ -32,5 +32,7 @@ public class CelularServer {
         server.setExecutor(null);
         System.out.println("Servidor Capa-API iniciado en http://localhost:8080");
         server.start();
+
+        // hello world
     }
 }
